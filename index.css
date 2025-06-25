@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+:root {
+    --primary-color: #6bbf59; /* Green medium */
+    --background-color: #a8d5ba; /* Green light */
+    --text-color: #2e7d32; /* Green dark */
+    --accent-color: #81c784; /* Green accent */
+}
+
+
+body{
+    background-color: var(--background-color);
+}
+
+.container{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+     gap: 4rem;
+    background-color: var(--accent-color);
+    width: 60%;
+    margin: 15rem 20rem; 
+    height: max-content;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    
+}
+
+
+.input{
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+    border-radius: 3px;
+
+}
+
+input {
+  width: 70%;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.inputbtn{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: #2e7d32 1px solid;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+.inputbtn:hover{
+    background-color: var(--text-color);
+    color: rgb(225, 235, 230);
+    cursor: pointer;
+     
+}
+
+.inputtask{
+    width: max-content;
+    height: 2rem;
+    background-color: var(--text-color);
+    display: none;
+}
+
+.quote{
+        width: max-content;
+    height: 2rem;
+    background-color: var(--text-color);
+    display: none;
+
+}
