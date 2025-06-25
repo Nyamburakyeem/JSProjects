@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Midnight Pages - My Soulful Blog</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+:root {
+      --bg-light: #fefefe;
+      --bg-dark: #121212;
+      --text-light: #1a1a1a;
+      --text-dark: #f9f9f9;
+      --accent: #ff6f61;
+      --font-main: 'Georgia', serif;
+      --font-display: 'Playfair Display', serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background: #fffdfb;
+      color: #333;
+      padding-top: 80px;
+      line-height: 1.6;
+    }
+
+    body.dark-mode {
+      background: #1a1a1a;
+      color: #f5f5f5;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color:var(--accent);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 1000;
+    }
+
+    .navbar a {
+      color: white;
+      margin-left: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    #toggleMode {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: white;
+    }
+
+    .post-container {
+      max-width: 700px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    .post-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--accent);
+    }
+
+    .site-footer {
+      background:var(--accent);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Soulful Blog</h1>
+
+      <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+        <button id="toggleMode"><i id="modeIcon" class="fa-regular fa-lightbulb"></i></button>
+
+
+  </header>
+
+  <div class="post-container">
+    <h2 class="post-title">Midnight Pages</h2>
+    <p>It was just after midnight. The world was sleeping, but my mind was wide awake. So I opened my journal and bled truth in ink.</p>
+    <p>I wrote about everything: the ache behind my laughter, the things I can't say out loud, the dreams I still cradle in silence.</p>
+    <p>They say the darkest hour is before dawn — but maybe it’s also the most honest. When you’re too tired to lie to yourself and too raw to pretend.</p>
+    <p>Those pages didn’t solve everything, but they softened something. They reminded me that expression is healing. That even if no one listens, I do. I hear me.</p>
+    <p>And sometimes, that’s enough.</p>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 My Soulful Blog. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('toggleMode');
+    const body = document.body;
+    const icon = document.getElementById('modeIcon');
+    const savedMode = localStorage.getItem('darkMode');
+    if (savedMode === 'enabled') {
+      body.classList.add('dark-mode');
+      icon.style.color = '#f5e663';
+    }
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const isDark = body.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+      icon.style.color = isDark ? '#f5e663' : 'inherit';
+    });
+  </script>
+</body>
+</html>

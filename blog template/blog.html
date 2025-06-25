@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog - My Soulful Blog</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-light: #fffdfb;
+      --bg-dark: #1a1a1a;
+      --text-light: #333;
+      --text-dark: #f5f5f5;
+      --accent: #ff6f61;
+      --font-main: 'Georgia', serif;
+      --font-display: 'Playfair Display', serif;
+    }
+
+    body {
+      margin: 0;
+      padding-top: 80px;
+      font-family: var(--font-main);
+      background: var(--bg-light);
+      color: var(--text-light);
+    }
+
+    body.dark-mode {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background-color: var(--accent);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: white;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 1rem;
+      margin-left: auto;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    .navbar a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    #toggleMode {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: white;
+    }
+
+    .blog-section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .blog-title {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--accent);
+    }
+
+    .post-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .post-card {
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      color: #333;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    body.dark-mode .post-card {
+      background: #2a2a2a;
+      color: var(--text-dark);
+    }
+
+    .post-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .post-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .post-content {
+      padding: 1.5rem;
+    }
+
+    .post-content h3 {
+      font-size: 1.4rem;
+      margin: 0 0 0.5rem;
+      font-family: var(--font-display);
+    }
+
+    .post-content p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+     .post-content a {
+      display: inline-block;
+      margin-top: 0.8rem;
+      color: var(--accent);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .post-content a:hover {
+      text-decoration: underline;
+    }
+
+    .site-footer {
+      background: var(--accent);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      font-family: var(--font-main);
+      margin-top: 4rem;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+      .social-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      margin: 1rem;
+    }
+
+    .social-links i {
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+      margin: 0 0.5rem;
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    .social-links i:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+     <header>
+    <h1>My Soulful Blog</h1>
+
+      <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contacts.html">Contact</a>
+    </nav>
+
+        <button id="toggleMode"><i id="modeIcon" class="fa-regular fa-lightbulb"></i></button>
+
+
+  </header>
+
+  <section class="blog-section">
+    <h2 class="blog-title">Latest Musings</h2>
+    <div class="post-grid">
+      <div class="post-card">
+        <img src="images/img9.jpg" class="post-img" alt="Nature journal">
+        <div class="post-content">
+          <h3>Dear August</h3>
+          <p>A letter to the month that changed everything. From sunlit peace to silent pain...</p>
+          <a href="blogs/august.html">Read More</a>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <img src="images/img10.jpg" class="post-img" alt="Tea and books">
+        <div class="post-content">
+          <h3>The Art of Doing Nothing</h3>
+          <p>A soft reflection on rest, resistance, and the beauty of slow living.</p>
+          <a href="blogs/nothing.html">Read More</a>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <img src="images/img11.jpg" class="post-img" alt="Writing diary">
+        <div class="post-content">
+          <h3>Midnight Pages</h3>
+          <p>What I found between insomnia and healing. Sometimes silence is loud.</p>
+          <a href="blogs/midnight.html">Read More</a>
+        </div>
+      </div>
+
+        <div class="post-card">
+        <img src="images/img5.jpg" alt="Notebook with handwriting"  class="post-img">
+
+        <div class="post-content">
+           <h3>Learning to Let Go</h3>
+        <p>Sometimes healing begins when we stop clinging and start releasing...</p>
+        <a href="#">Read More</a>
+        </div>
+       
+      </div>
+      <div class="post-card">
+        <img src="images/img7.jpg" class="post-img"   alt="Tea and books on a cozy table">
+
+        <div class="post-content">
+          <h3>A Cup of Stillness</h3>
+        <p>In a noisy world, silence becomes a superpower. Here's how I found mine...</p>
+        <a href="#">Read More</a>
+        </div>
+        
+      </div>
+      <div class="post-card">
+        <img src="images/img8.jpg"  class="post-img" alt="Golden sunset through a window">
+        <div class="post-content">
+          <h3>Letters to My Younger Self</h3>
+        <p>What I wish someone had told me at 19—and what I’m finally saying now...</p>
+        <a href="#">Read More</a>
+        </div>
+        
+      </div>
+      <div class="post-card">
+        <img src="images/img6.jpg" class="post-img" alt="Open journal with pen on bed">
+
+        <div class="post-content">
+           <h3>The Softness I Deserve</h3>
+        <p>This is the year I stop apologizing for needing peace, love, and rest...</p>
+        <a href="#">Read More</a>
+        </div>
+       
+      </div>
+
+    </div>
+  </section>
+
+   <footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy; 2025 My Soulful Blog. All rights reserved.</p>
+      <div class="social-links">
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-pinterest"></i>
+       <i class="fa-solid fa-envelope"></i>
+       <i class="fa-brands fa-whatsapp"></i>
+       <i class="fa-brands fa-facebook"></i>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('toggleMode');
+    const body = document.body;
+    const icon = document.getElementById('modeIcon');
+
+    // Load saved mode from localStorage
+    const savedMode = localStorage.getItem('darkMode');
+    if (savedMode === 'enabled') {
+      body.classList.add('dark-mode');
+      icon.style.color = '#f5e663';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const isDark = body.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+      icon.style.color = isDark ? '#f5e663' : 'inherit';
+    });
+  </script>
+</body>
+</html>

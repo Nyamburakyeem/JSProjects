@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about section </title>
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+      <header>
+    <h1>My Soulful Blog</h1>
+
+      <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contacts.html">Contact</a>
+    </nav>
+
+        <button id="toggleMode"><i id="modeIcon" class="fa-regular fa-lightbulb"></i></button>
+
+
+  </header>
+
+    <section class="about-section">
+    <div class="about-container">
+      <h2>About Me</h2>
+      <p>Hey there! I'm the heart and hands behind this blog. I created this space to share quiet thoughts, soulful reflections, and beautiful things that make life feel warmer. Whether it's poetry, journaling, or personal growth—I hope you find a spark here that makes you feel seen.</p>
+    </div>
+  </section>
+
+  
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy; 2025 My Soulful Blog. All rights reserved.</p>
+      <div class="social-links">
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-pinterest"></i>
+       <i class="fa-solid fa-envelope"></i>
+       <i class="fa-brands fa-whatsapp"></i>
+       <i class="fa-brands fa-facebook"></i>
+      </div>
+    </div>
+  </footer>
+
+    <script>
+    const toggleBtn = document.getElementById('toggleMode');
+    const body = document.body;
+    const icon = document.getElementById('modeIcon');
+
+    // Load saved mode from localStorage
+    const savedMode = localStorage.getItem('darkMode');
+    if (savedMode === 'enabled') {
+      body.classList.add('dark-mode');
+      icon.style.color = '#f5e663';
+    }
+
+    // Toggle and save mode
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const isDark = body.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+      icon.style.color = isDark ? '#f5e663' : 'inherit';
+    });
+  </script>
+    
+</body>
+</html>
